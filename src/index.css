@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+* {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Gradient text */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Touch highlight removal */
+.apple-touch {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Float animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 4.6s ease-in-out 0.8s infinite;
+}
+
+.animate-float-delay-2 {
+  animation: float 5.2s ease-in-out 1.6s infinite;
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+/* Ping animation for indicators */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 2px;
+}
