@@ -1169,7 +1169,6 @@ function DepositModal({ ratesInfo, onClose }: { ratesInfo: ReturnType<typeof imp
                 const isMC = net === 'Mastercard'
                 const vbvLabel = isVisa ? 'Verificado por Visa' : isMC ? 'Mastercard Identity Check' : 'Autenticação 3D Secure'
                 const vbvColor = isVisa ? '#1a1f71' : isMC ? '#eb001b' : '#2563eb'
-                const _maskedPhone = `(••) •••••-${cardNumber.replace(/\s/g,'').slice(-4) || '••••'}`
                 return (
                   <div className="space-y-5">
                     {/* VBV Header */}
