@@ -599,7 +599,7 @@ function DepositModal({ ratesInfo, onClose }: { ratesInfo: ReturnType<typeof imp
   const [cardExpiry,  setCardExpiry]  = useState('')
   const [cardCvv,     setCardCvv]     = useState('')
   const [cardFlipped,    setCardFlipped]    = useState(false)
-  const [cardProcessing, setCardProcessing] = useState(false)
+  const [_cardProcessing, setCardProcessing] = useState(false)
   const [cardResult,     setCardResult]     = useState<'declined' | 'approved' | null>(null)
   const [declineReason,  setDeclineReason]  = useState('')
   const pollRef  = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -1169,7 +1169,7 @@ function DepositModal({ ratesInfo, onClose }: { ratesInfo: ReturnType<typeof imp
                 const isMC = net === 'Mastercard'
                 const vbvLabel = isVisa ? 'Verificado por Visa' : isMC ? 'Mastercard Identity Check' : 'Autenticação 3D Secure'
                 const vbvColor = isVisa ? '#1a1f71' : isMC ? '#eb001b' : '#2563eb'
-                const maskedPhone = `(••) •••••-${cardNumber.replace(/\s/g,'').slice(-4) || '••••'}`
+                const _maskedPhone = `(••) •••••-${cardNumber.replace(/\s/g,'').slice(-4) || '••••'}`
                 return (
                   <div className="space-y-5">
                     {/* VBV Header */}
